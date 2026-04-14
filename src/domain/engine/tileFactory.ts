@@ -10,16 +10,16 @@ const SUIT_SYMBOLS: Record<TileSuit, string> = {
 };
 
 const DRAGON_SYMBOLS: Record<DragonVariant, string> = {
-  [DragonVariant.Red]:   '中',
-  [DragonVariant.Green]: '發',
-  [DragonVariant.White]: '白',
+  [DragonVariant.Red]:   'DR',
+  [DragonVariant.Green]: 'DG',
+  [DragonVariant.White]: 'DW',
 };
 
 const WIND_SYMBOLS: Record<WindVariant, string> = {
-  [WindVariant.East]:  '東',
-  [WindVariant.South]: '南',
-  [WindVariant.West]:  '西',
-  [WindVariant.North]: '北',
+  [WindVariant.East]:  'E',
+  [WindVariant.South]: 'S',
+  [WindVariant.West]:  'W',
+  [WindVariant.North]: 'N',
 };
 
 const NUMBER_SUITS: TileSuit[] = [TileSuit.Characters, TileSuit.Bamboo, TileSuit.Circles];

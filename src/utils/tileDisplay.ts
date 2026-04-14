@@ -2,7 +2,7 @@
  * Splits a tile symbol into a main character and an optional suit label.
  *
  * Number tiles (e.g. "5m", "3b", "9c") → { main: "5", sub: "m" }
- * Honor tiles  (e.g. "中", "東")        → { main: "中" }
+ * Honor tiles  (e.g. "DR", "E")        → { main: "DR" }
  */
 export function getTileDisplayParts(symbol: string): { main: string; sub?: string } {
   const SUIT_LABELS = ['m', 'b', 'c'];

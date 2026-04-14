@@ -55,8 +55,8 @@
   justify-content: center;
 }
 
-.md .main { font-size: 1.75rem; font-family: var(--font-tile); }
-.sm .main { font-size: 1.15rem; font-family: var(--font-tile); }
+.md .main { font-size: 1.5rem;  font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.02em; }
+.sm .main { font-size: 1rem;   font-family: var(--font-sans); font-weight: 700; }
 
 .sub {
   font-size: 0.6em;
