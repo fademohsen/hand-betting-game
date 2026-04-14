@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.prompt {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.03em;
+}
+
+.buttons {
+  display: flex;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Override Button base to give Higher/Lower distinct accent colours */
+.higher {
+  border-color: var(--color-win) !important;
+  color: var(--color-win) !important;
+}
+.higher:not(:disabled):hover {
+  background: color-mix(in srgb, var(--color-win) 10%, transparent) !important;
+}
+
+.lower {
+  border-color: var(--color-loss) !important;
+  color: var(--color-loss) !important;
+}
+.lower:not(:disabled):hover {
+  background: color-mix(in srgb, var(--color-loss) 10%, transparent) !important;
+}

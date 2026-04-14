@@ -25,16 +25,6 @@
   gap: var(--space-xl);
 }
 
-/* ── Bet controls placeholder ──────────────────────────── */
-.betPlaceholder {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  padding: var(--space-md);
-  border: 1px dashed var(--color-border);
-  border-radius: var(--radius-md);
-  text-align: center;
-}
-
 /* ── History placeholder ───────────────────────────────── */
 .historyPlaceholder {
   font-size: 0.8rem;

@@ -4,6 +4,7 @@ import {
   selectTileValues,
 } from '../../store/gameStore';
 import HandDisplay from './HandDisplay';
+import BetControls from './BetControls';
 import ScoreDisplay from './ScoreDisplay';
 import DeckStatus from './DeckStatus';
 import Button from '../shared/Button';
@@ -14,7 +15,6 @@ export default function GameScreen() {
   const tileValues  = useGameStore(selectTileValues);
   const exitGame    = useGameStore((s) => s.exitGame);
 
-  // Guard: currentHand is null only in the brief moment before startNewGame completes
   if (!currentHand) return null;
 
   return (
@@ -32,11 +32,7 @@ export default function GameScreen() {
           tileValues={tileValues}
           label="Current Hand"
         />
-
-        {/* Phase 3 — BetControls */}
-        <div className={styles.betPlaceholder}>
-          Bet Controls — Phase 3
-        </div>
+        <BetControls />
       </main>
 
       <DeckStatus />
