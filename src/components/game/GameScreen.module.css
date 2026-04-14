@@ -1,0 +1,46 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  gap: var(--space-lg);
+}
+
+/* ── Header row ────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Main hand area ────────────────────────────────────── */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: var(--space-xl);
+}
+
+/* ── Bet controls placeholder ──────────────────────────── */
+.betPlaceholder {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding: var(--space-md);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+/* ── History placeholder ───────────────────────────────── */
+.historyPlaceholder {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding: var(--space-md);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
