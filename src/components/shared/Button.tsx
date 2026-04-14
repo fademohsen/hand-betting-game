@@ -11,6 +11,7 @@ interface ButtonProps {
   disabled?:  boolean;
   fullWidth?: boolean;
   type?:      'button' | 'submit';
+  className?: string;
 }
 
 export default function Button({
@@ -21,12 +22,14 @@ export default function Button({
   disabled  = false,
   fullWidth = false,
   type      = 'button',
+  className,
 }: ButtonProps) {
   const classes = [
     styles.button,
     styles[variant],
     size !== 'md' ? styles[size] : '',
     fullWidth ? styles.fullWidth : '',
+    className,
   ]
     .filter(Boolean)
     .join(' ');
