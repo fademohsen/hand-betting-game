@@ -1,0 +1,78 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-height: 280px;
+  overflow-y: auto;
+  /* subtle scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* ── Entry card ────────────────────────────────────────── */
+
+.entry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--entry-accent, var(--color-border));
+  border-radius: var(--radius-md);
+}
+
+.entry.win  { --entry-accent: var(--color-win);  }
+.entry.loss { --entry-accent: var(--color-loss); }
+.entry.tie  { --entry-accent: var(--color-tie);  }
+
+/* ── Result badge ──────────────────────────────────────── */
+
+.badge {
+  flex-shrink: 0;
+  width: 36px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: var(--radius-sm);
+}
+
+.badge.win  { background: color-mix(in srgb, var(--color-win)  15%, transparent); color: var(--color-win);  }
+.badge.loss { background: color-mix(in srgb, var(--color-loss) 15%, transparent); color: var(--color-loss); }
+.badge.tie  { background: color-mix(in srgb, var(--color-tie)  15%, transparent); color: var(--color-tie);  }
+
+/* ── Hand area ─────────────────────────────────────────── */
+
+.handArea {
+  flex: 1;
+  /* Override HandDisplay wrapper to be row-based in this context */
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ── Bet label ─────────────────────────────────────────── */
+
+.betLabel {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
