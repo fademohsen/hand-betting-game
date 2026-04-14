@@ -27,6 +27,10 @@
   letter-spacing: -0.02em;
 }
 
+.total[data-size='sm'] {
+  font-size: 1.1rem;
+}
+
 .totalLabel {
   font-size: 0.8rem;
   color: var(--color-text-muted);
