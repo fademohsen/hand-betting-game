@@ -18,15 +18,6 @@
   text-align: center;
 }
 
-.decorativeTiles {
-  display: flex;
-  gap: var(--space-sm);
-  font-family: var(--font-tile);
-  font-size: 2rem;
-  opacity: 0.45;
-  letter-spacing: 0.1em;
-  user-select: none;
-}
 
 .title {
   font-size: clamp(2.2rem, 5vw, 3.2rem);

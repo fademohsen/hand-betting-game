@@ -3,20 +3,12 @@ import Button from '../shared/Button';
 import Leaderboard from './Leaderboard';
 import styles from './LandingPage.module.css';
 
-const DECORATIVE_TILES = ['中', '發', '東', '白', '南'];
-
 export default function LandingPage() {
   const startNewGame = useGameStore((s) => s.startNewGame);
 
   return (
     <main className={styles.page}>
       <div className={styles.hero}>
-        <div className={styles.decorativeTiles} aria-hidden="true">
-          {DECORATIVE_TILES.map((t) => (
-            <span key={t}>{t}</span>
-          ))}
-        </div>
-
         <h1 className={styles.title}>
           Hand <span>Betting</span> Game
         </h1>
