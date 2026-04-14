@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GameOverReason } from '../../domain/session';
-import { useGameStore, selectGameOver } from '../../store/gameStore';
+import { useGameStore, selectGameOverScore, selectGameOverReason } from '../../store/gameStore';
 import { useLeaderboardStore, selectSubmitScore } from '../../store/leaderboardStore';
 import Button from '../shared/Button';
 import styles from './GameOverScreen.module.css';
@@ -19,7 +19,8 @@ function getScoreMessage(score: number): string {
 }
 
 export default function GameOverScreen() {
-  const { score, reason } = useGameStore(selectGameOver);
+  const score  = useGameStore(selectGameOverScore);
+  const reason = useGameStore(selectGameOverReason);
   const submitScore       = useLeaderboardStore(selectSubmitScore);
   const resetGame         = useGameStore((s) => s.resetGame);
   const exitGame          = useGameStore((s) => s.exitGame);

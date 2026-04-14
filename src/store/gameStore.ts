@@ -108,5 +108,6 @@ export const selectPreviousHand = (s: GameStore) => s.session.previousHand;
 export const selectScore        = (s: GameStore) => s.session.score;
 export const selectDeck         = (s: GameStore) => s.session.deck;
 export const selectTileValues   = (s: GameStore) => s.session.tileValues;
-export const selectHistory      = (s: GameStore) => s.session.history;
-export const selectGameOver     = (s: GameStore) => ({ reason: s.session.gameOverReason, score: s.session.score });
+export const selectHistory          = (s: GameStore) => s.session.history;
+export const selectGameOverScore    = (s: GameStore) => s.session.score;
+export const selectGameOverReason   = (s: GameStore) => s.session.gameOverReason;
