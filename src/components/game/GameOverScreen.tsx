@@ -19,11 +19,11 @@ function getScoreMessage(score: number): string {
 }
 
 export default function GameOverScreen() {
-  const score  = useGameStore(selectGameOverScore);
-  const reason = useGameStore(selectGameOverReason);
-  const submitScore       = useLeaderboardStore(selectSubmitScore);
-  const resetGame         = useGameStore((s) => s.resetGame);
-  const exitGame          = useGameStore((s) => s.exitGame);
+  const score        = useGameStore(selectGameOverScore);
+  const reason       = useGameStore(selectGameOverReason);
+  const startNewGame = useGameStore((s) => s.startNewGame);
+  const exitGame     = useGameStore((s) => s.exitGame);
+  const submitScore  = useLeaderboardStore(selectSubmitScore);
 
   const [playerName, setPlayerName] = useState('');
   const [submitted, setSubmitted]   = useState(false);
@@ -58,6 +58,8 @@ export default function GameOverScreen() {
             placeholder="Enter your name…"
             value={playerName}
             maxLength={24}
+            aria-label="Your name for the leaderboard"
+            autoFocus
             onChange={(e) => setPlayerName(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
           />
@@ -73,7 +75,8 @@ export default function GameOverScreen() {
       )}
 
       <div className={styles.actions}>
-        <Button variant="primary" fullWidth onClick={resetGame}>
+        {/* startNewGame builds a fresh session directly — no landing page pass-through */}
+        <Button variant="primary" fullWidth onClick={startNewGame}>
           Play Again
         </Button>
         <Button variant="ghost" fullWidth onClick={exitGame}>

@@ -6,6 +6,7 @@
   margin: 0 auto;
   padding: var(--space-lg);
   gap: var(--space-lg);
+  animation: fadeIn 220ms ease;
 }
 
 .header {

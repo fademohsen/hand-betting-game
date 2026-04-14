@@ -9,6 +9,7 @@
   max-width: 420px;
   margin: 0 auto;
   text-align: center;
+  animation: fadeIn 220ms ease;
 }
 
 /* ── Header ────────────────────────────────────────────── */

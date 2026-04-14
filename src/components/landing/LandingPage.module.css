@@ -6,9 +6,8 @@
   justify-content: center;
   gap: var(--space-xl);
   padding: var(--space-xl) var(--space-lg);
+  animation: fadeIn 220ms ease;
 }
-
-/* ── Hero ─────────────────────────────────────────────── */
 
 .hero {
   display: flex;

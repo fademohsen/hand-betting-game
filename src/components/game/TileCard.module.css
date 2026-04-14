@@ -19,6 +19,12 @@
   overflow: hidden;
   user-select: none;
   flex-shrink: 0;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.md:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
 /* Coloured top bar per suit */
