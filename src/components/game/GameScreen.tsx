@@ -5,6 +5,7 @@ import {
 } from '../../store/gameStore';
 import HandDisplay from './HandDisplay';
 import BetControls from './BetControls';
+import HandHistory from './HandHistory';
 import ScoreDisplay from './ScoreDisplay';
 import DeckStatus from './DeckStatus';
 import Button from '../shared/Button';
@@ -36,11 +37,7 @@ export default function GameScreen() {
       </main>
 
       <DeckStatus />
-
-      {/* Phase 4 — HandHistory */}
-      <div className={styles.historyPlaceholder}>
-        Hand History — Phase 4
-      </div>
+      <HandHistory />
     </div>
   );
 }

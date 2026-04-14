@@ -8,14 +8,12 @@
   gap: var(--space-lg);
 }
 
-/* ── Header row ────────────────────────────────────────── */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* ── Main hand area ────────────────────────────────────── */
 .main {
   display: flex;
   flex-direction: column;
@@ -23,14 +21,4 @@
   justify-content: center;
   flex: 1;
   gap: var(--space-xl);
-}
-
-/* ── History placeholder ───────────────────────────────── */
-.historyPlaceholder {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  padding: var(--space-md);
-  border: 1px dashed var(--color-border);
-  border-radius: var(--radius-md);
-  text-align: center;
 }
