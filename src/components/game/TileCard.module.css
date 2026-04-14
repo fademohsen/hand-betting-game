@@ -1,0 +1,77 @@
+/* ── Suit accent colours (inherited by ::before) ───────── */
+.characters { --tile-accent: var(--color-accent);  }
+.bamboo     { --tile-accent: var(--color-win);     }
+.circles    { --tile-accent: #5b9bd5;              }
+.dragon     { --tile-accent: var(--color-loss);    }
+.wind       { --tile-accent: #9b7fd4;              }
+
+/* ── Base tile ─────────────────────────────────────────── */
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Coloured top bar per suit */
+.tile::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--tile-accent, var(--color-border));
+}
+
+/* ── Sizes ─────────────────────────────────────────────── */
+.md {
+  width: 68px;
+  height: 92px;
+  padding: var(--space-sm) var(--space-xs);
+  padding-top: calc(var(--space-sm) + 3px); /* clear the accent bar */
+}
+
+.sm {
+  width: 46px;
+  height: 62px;
+  padding: var(--space-xs);
+  padding-top: calc(var(--space-xs) + 3px);
+}
+
+/* ── Symbol ────────────────────────────────────────────── */
+.symbolWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  flex: 1;
+  justify-content: center;
+}
+
+.md .main { font-size: 1.75rem; font-family: var(--font-tile); }
+.sm .main { font-size: 1.15rem; font-family: var(--font-tile); }
+
+.sub {
+  font-size: 0.6em;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* ── Value badge ───────────────────────────────────────── */
+.value {
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--tile-accent, var(--color-text-muted));
+  letter-spacing: 0.02em;
+}
+
+.sm .value { font-size: 0.6rem; }

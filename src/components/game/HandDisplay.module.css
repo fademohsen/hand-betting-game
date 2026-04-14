@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.tiles {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-end;
+}
+
+.total {
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.totalLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-left: var(--space-xs);
+}
