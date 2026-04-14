@@ -1,5 +1,5 @@
 import type { Tile } from './tile';
-import { BetDirection, RoundResult } from './tile';
+import type { BetDirection, RoundResult } from './tile';
 
 export interface Hand {
   tiles: Tile[];
@@ -7,10 +7,8 @@ export interface Hand {
 }
 
 /**
- * Snapshot of one completed round stored in the history log.
- *
- * `bet` and `result` are null for the very first hand drawn,
- * which has no prior prediction to resolve against.
+ * Snapshot of one round stored in history.
+ * `bet` and `result` are null for the first hand (no prior prediction to resolve).
  */
 export interface HandHistoryEntry {
   hand:        Hand;
@@ -18,6 +16,3 @@ export interface HandHistoryEntry {
   result:      RoundResult  | null;
   scoreGained: number;
 }
-
-// Re-export so consumers can import everything hand-related from one place
-export { BetDirection, RoundResult };

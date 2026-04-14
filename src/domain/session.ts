@@ -2,16 +2,18 @@ import type { Hand, HandHistoryEntry } from './hand';
 import type { DeckState } from './deck';
 import type { TileValueMap } from './tile';
 
-export enum GameStatus {
-  Idle     = 'idle',
-  Playing  = 'playing',
-  GameOver = 'game-over',
-}
+export const GameStatus = {
+  Idle:     'idle',
+  Playing:  'playing',
+  GameOver: 'game-over',
+} as const;
+export type GameStatus = typeof GameStatus[keyof typeof GameStatus];
 
-export enum GameOverReason {
-  TileValueLimit = 'tile-value-limit',
-  MaxReshuffles  = 'max-reshuffles',
-}
+export const GameOverReason = {
+  TileValueLimit: 'tile-value-limit',
+  MaxReshuffles:  'max-reshuffles',
+} as const;
+export type GameOverReason = typeof GameOverReason[keyof typeof GameOverReason];
 
 export interface GameSession {
   status:          GameStatus;
@@ -19,7 +21,6 @@ export interface GameSession {
   previousHand:    Hand | null;
   score:           number;
   deck:            DeckState;
-  /** Honor tile values tracked globally for the duration of this session */
   tileValues:      TileValueMap;
   history:         HandHistoryEntry[];
   gameOverReason?: GameOverReason;

@@ -1,39 +1,45 @@
-export enum TileType {
-  Number = 'number',
-  Honor  = 'honor',
-}
+export const TileType = {
+  Number: 'number',
+  Honor:  'honor',
+} as const;
+export type TileType = typeof TileType[keyof typeof TileType];
 
-export enum TileSuit {
-  Characters = 'characters',
-  Bamboo     = 'bamboo',
-  Circles    = 'circles',
-  Dragon     = 'dragon',
-  Wind       = 'wind',
-}
+export const TileSuit = {
+  Characters: 'characters',
+  Bamboo:     'bamboo',
+  Circles:    'circles',
+  Dragon:     'dragon',
+  Wind:       'wind',
+} as const;
+export type TileSuit = typeof TileSuit[keyof typeof TileSuit];
 
-export enum DragonVariant {
-  Red   = 'red',
-  Green = 'green',
-  White = 'white',
-}
+export const DragonVariant = {
+  Red:   'red',
+  Green: 'green',
+  White: 'white',
+} as const;
+export type DragonVariant = typeof DragonVariant[keyof typeof DragonVariant];
 
-export enum WindVariant {
-  East  = 'east',
-  South = 'south',
-  West  = 'west',
-  North = 'north',
-}
+export const WindVariant = {
+  East:  'east',
+  South: 'south',
+  West:  'west',
+  North: 'north',
+} as const;
+export type WindVariant = typeof WindVariant[keyof typeof WindVariant];
 
-export enum BetDirection {
-  Higher = 'higher',
-  Lower  = 'lower',
-}
+export const BetDirection = {
+  Higher: 'higher',
+  Lower:  'lower',
+} as const;
+export type BetDirection = typeof BetDirection[keyof typeof BetDirection];
 
-export enum RoundResult {
-  Win  = 'win',
-  Loss = 'loss',
-  Tie  = 'tie',
-}
+export const RoundResult = {
+  Win:  'win',
+  Loss: 'loss',
+  Tie:  'tie',
+} as const;
+export type RoundResult = typeof RoundResult[keyof typeof RoundResult];
 
 /**
  * One physical tile in the deck.
@@ -52,8 +58,5 @@ export interface Tile {
   symbol:   string;
 }
 
-/**
- * Tracks the current value of each honor tile identity within a game session.
- * Number tiles are excluded — their value is always derived from `rank`.
- */
+/** Tracks the current value of each honor tile identity within a game session. */
 export type TileValueMap = Record<string, number>;

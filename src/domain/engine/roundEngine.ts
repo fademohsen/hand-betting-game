@@ -1,48 +1,26 @@
-import { TileType, TileValueMap, BetDirection, RoundResult } from '../tile';
-import { Hand } from '../hand';
+import type { TileValueMap } from '../tile';
+import type { Hand } from '../hand';
+import { TileType, BetDirection, RoundResult } from '../tile';
 import { GAME_CONFIG } from '../../config/gameConfig';
 
-// ─── Bet resolution ──────────────────────────────────────────────────────────
-
-/**
- * Compares the previous and new hand totals against the player's bet.
- */
-export function resolveRound(
-  previousHand: Hand,
-  newHand:      Hand,
-  bet:          BetDirection,
-): RoundResult {
+export function resolveRound(previousHand: Hand, newHand: Hand, bet: BetDirection): RoundResult {
   if (newHand.total > previousHand.total) {
     return bet === BetDirection.Higher ? RoundResult.Win : RoundResult.Loss;
   }
-
   if (newHand.total < previousHand.total) {
     return bet === BetDirection.Lower ? RoundResult.Win : RoundResult.Loss;
   }
-
-  // Totals are equal — apply configured tie behavior
-  if (GAME_CONFIG.TIE_BEHAVIOR === 'loss') return RoundResult.Loss;
-  return RoundResult.Tie;
+  // Tie — behaviour is configurable
+  return GAME_CONFIG.TIE_BEHAVIOR === 'loss' ? RoundResult.Loss : RoundResult.Tie;
 }
-
-// ─── Score ───────────────────────────────────────────────────────────────────
 
 export function scoreForResult(result: RoundResult): number {
   return result === RoundResult.Win ? 1 : 0;
 }
 
-// ─── Dynamic tile value scaling ──────────────────────────────────────────────
-
 /**
- * Updates tracked honor tile values based on the round result.
- *
- * Applies only to honor tiles in the NEW hand:
- *   Win  → each honor tile tileKey +1
- *   Loss → each honor tile tileKey -1
- *   Tie  → no change
- *
- * Values are clamped to [TILE_VALUE_MIN, TILE_VALUE_MAX].
- * Returns a new map — does not mutate the input.
+ * Scales honor tiles that appear in `newHand` based on the round result.
+ * Win → +1, Loss → -1, Tie → no change. Values clamped to [MIN, MAX].
  */
 export function updateTileValues(
   newHand:    Hand,
@@ -51,7 +29,7 @@ export function updateTileValues(
 ): TileValueMap {
   if (result === RoundResult.Tie) return tileValues;
 
-  const delta = result === RoundResult.Win ? 1 : -1;
+  const delta   = result === RoundResult.Win ? 1 : -1;
   const updated = { ...tileValues };
 
   for (const tile of newHand.tiles) {
