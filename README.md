@@ -89,3 +89,22 @@ npm run preview
 * Animated tile deal and flip transitions
 * Multiplayer via WebSocket with a shared deck
 * Per-session stats (win rate, longest streak, average score)
+
+## AI Usage
+
+AI tools were used during development to assist with:
+
+* speeding up initial scaffolding and boilerplate code
+* suggesting UI structure and component breakdown
+* refining some TypeScript typings and edge cases
+
+However, the core architecture, domain design, and validation of logic were carefully reviewed and implemented manually.
+
+All critical decisions such as:
+
+* state management design
+* domain-engine separation
+* history snapshot handling
+* selector stability and bug fixes
+
+were verified and adjusted to ensure correctness and maintainability.
